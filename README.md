@@ -1,1 +1,1 @@
-# [Exercise Tracker REST-API]
+# Exercise Tracker REST-API
