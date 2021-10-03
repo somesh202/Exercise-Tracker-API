@@ -1,9 +1,8 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const { ObjectId } = require('mongodb');
 const cors = require('cors')
-
+const exerciseUsers = require('./models/user.js');
 const mongodb = require('mongodb')
 const mongoose = require('mongoose')
 require('dotenv').config({ path: '.env' })
@@ -26,25 +25,6 @@ app.use(bodyParser.json())
 app.use(express.static('public'))
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
-});
-
-const Schema = mongoose.Schema;
-const exerciseUsers = new Schema({
-  username: {type: String, required: true},
-  exercise: [{
-    description: {
-      type: String,
-      required: true
-    },
-    duration: {
-      type: Number,
-      required: true
-    },
-    date: {
-      type: Date,
-      default: Date.now
-    }
-  }]
 });
 
 //Convert User Schema into a Model
