@@ -57,7 +57,7 @@ app.get('/api/users', (req, res) => {
   })
 })
 
-///Add Exercise .
+///Add Exercise
 app.post('/api/users/:_id/exercises', (req, res) => {
   
   let { description, duration } = req.body
@@ -101,7 +101,6 @@ app.post('/api/users/:_id/exercises', (req, res) => {
 
 //Retrieve users exercise data
 app.get('/api/users/:_id/logs', (req, res) => {
-  //Define variables from url and apply logic
   let userId = req.params._id;  
   let from = req.query.from !== undefined ? new Date(req.query.from) : null
   let to = req.query.to !== undefined ? new Date(req.query.to) : null
