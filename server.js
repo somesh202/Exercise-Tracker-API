@@ -43,7 +43,7 @@ app.post('/api/users', (req, res) => {
   let username = req.body.username;
   createUser(username, (err, data) => {
     if(err){
-      res.send("Error");
+      res.send("Some error occured");
     } 
     res.send({username: data.username, _id: data._id});
   })
@@ -94,7 +94,7 @@ app.post('/api/users/:_id/exercises', (req, res) => {
       });
     }
     else{
-      res.send("Please all fields correctly")
+      res.send("Please all fields correctly.")
     }
   })
 })
